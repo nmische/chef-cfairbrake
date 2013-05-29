@@ -18,14 +18,14 @@
 #
 
 
-node.set['cfairbrake']['owner'] = "nobody" if node['mxunit']['owner'] == nil
+node.set['cfairbrake']['owner'] = "nobody" if node['cfairbrake']['owner'] == nil
 
 # Create the target install directory if it doesn't exist
 
 directory "#{node['cfairbrake']['install_path']}" do
   owner node['cfairbrake']['owner']
   group node['cfairbrake']['group']
-  mode "0755"
+  mode 00755
   recursive true
   action :create
   not_if { File.directory?("#{node['cfairbrake']['install_path']}") }
@@ -36,7 +36,7 @@ end
 remote_file "#{node['cfairbrake']['install_path']}/cfairbrake.cfc" do
   owner node['cfairbrake']['owner']
   group node['cfairbrake']['group']
-  mode 00644
+  mode 00755
   source node['cfairbrake']['download_url']
 end
 

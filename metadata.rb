@@ -2,7 +2,7 @@ maintainer        "Nathan Mische"
 maintainer_email  "nmische@gmail.com"
 license           "Apache 2.0"
 description       "Installs cfairbrake client component for Airbrake.io."
-version           "0.1.0"
+version           "1.0.0"
 recipe            "cfairbrake", "Installs cfairbrake client component for Airbrake.io."
 
 %w{ coldfusion10 }.each do |d|
