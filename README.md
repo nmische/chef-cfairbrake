@@ -1,3 +1,6 @@
+[![Build Status](https://secure.travis-ci.org/nmische/chef-cfairbrake.png)](http://travis-ci.org/nmische/chef-cfairbrake)
+
+
 Description
 ===========
 

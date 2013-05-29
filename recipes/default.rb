@@ -22,13 +22,13 @@ node.set['cfairbrake']['owner'] = "nobody" if node['cfairbrake']['owner'] == nil
 
 # Create the target install directory if it doesn't exist
 
-directory "#{node['cfairbrake']['install_path']}" do
+directory node['cfairbrake']['install_path'] do
   owner node['cfairbrake']['owner']
   group node['cfairbrake']['group']
   mode 00755
   recursive true
   action :create
-  not_if { File.directory?("#{node['cfairbrake']['install_path']}") }
+  not_if { File.directory?(node['cfairbrake']['install_path']) }
 end
 
 # Download client component
@@ -51,7 +51,7 @@ coldfusion10_config "extensions" do
   action :set
   property "mapping"
   args ({ "mapName" => "/cfairbrake",
-          "mapPath" => "#{node['cfairbrake']['install_path']}"})
+          "mapPath" => node['cfairbrake']['install_path']})
 end
 
 
