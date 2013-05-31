@@ -14,5 +14,8 @@ Recipes
 Attributes
 =============
 
-  * `node['cfairbrake']['download_url']` - The URL for the ColdFire installation bits. Default is: "https://raw.github.com/nmische/cfairbrake/1.0.0/cfairbrake.cfc"
+  * `node['cfairbrake']['download_url']` - The URL for the ColdFire installation bits. Default is: "https://raw.github.com/nmische/cfairbrake/1.0.1/cfairbrake.cfc"
+  * `node['cfairbrake']['install_path'']` - Where to install the component. Default is: "/vagrant/frameworks/cfairbrake"
+  * `node['cfairbrake']['owner']` - The owner. Default is `nil` which will result in owner being set to `node['cf10']['installer']['runtimeuser']`
+  * `node['cfairbrake']['group']` - The group. Default is "bin"
   
