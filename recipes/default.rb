@@ -17,8 +17,7 @@
 # limitations under the License.
 #
 
-
-node.set['cfairbrake']['owner'] = "nobody" if node['cfairbrake']['owner'] == nil
+node.set['cfairbrake']['owner'] = node['cf10']['installer']['runtimeuser'] if node['cfairbrake']['owner'] == nil
 
 # Create the target install directory if it doesn't exist
 
